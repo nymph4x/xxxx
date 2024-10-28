@@ -1,0 +1,7 @@
+{
+  "name": "completeProfile",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
