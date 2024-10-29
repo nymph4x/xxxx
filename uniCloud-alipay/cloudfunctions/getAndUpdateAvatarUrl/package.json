@@ -1,0 +1,7 @@
+{
+  "name": "getTempFileURL",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "leaderboard",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
