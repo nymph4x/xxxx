@@ -13,8 +13,15 @@ exports.main = async (event, context) => {
     };
   }
 
-  return {
+  const result = {
     success: true,
-    message: '登录成功'
+    message: '登录成功',
+    data: {
+      user_id: user.data[0]._id // 返回用户的 _id
+    }
   };
+  
+  console.log("userLogin result:", JSON.stringify(result)); // 输出完整的 result 对象
+  return result;
+
 };

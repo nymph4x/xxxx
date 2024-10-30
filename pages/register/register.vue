@@ -42,6 +42,7 @@ export default {
         });
     
         if (callRes.result && callRes.result.success) {
+		  
           uni.showToast({ title: '注册成功', icon: 'success' });
           uni.redirectTo({ url: '/pages/profileComplete/profileComplete' });
         } else {

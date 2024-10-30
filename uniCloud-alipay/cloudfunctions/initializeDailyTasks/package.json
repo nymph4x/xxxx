@@ -1,0 +1,7 @@
+{
+  "name": "initializeDailyTasks",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

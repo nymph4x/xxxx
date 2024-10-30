@@ -1,11 +1,35 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/welcome/welcome",
+			"style": {
+				"navigationBarTitleText": "欢迎"
+			}
+		},
+		{
 		    "path": "pages/leaderboard/leaderboard",
 		    "style": {
 		        "navigationBarTitleText": "福币榜"
 		    }
 		},
+		{
+		      "path": "pages/fubBill/fubBill",
+		      "style": {
+		        "navigationBarTitleText": "福币账单"
+		    }
+		},	
+		{
+		      "path": "pages/myFub/myFub",
+		      "style": {
+		        "navigationBarTitleText": "我的福币"
+		    }
+		},	
+		{
+		      "path": "pages/dailyTasks/dailyTasks",
+		      "style": {
+		        "navigationBarTitleText": "每日任务"
+		    }
+		},	  
 		{
 		     "path": "pages/register/register",
 		     "style": {
@@ -18,12 +42,7 @@
 		        "navigationBarTitleText": "登录"
 		    }
 		},
-		{
-			"path": "pages/welcome/welcome",
-			"style": {
-				"navigationBarTitleText": "欢迎"
-			}
-		},
+		
 		
 		{
 			"path": "pages/profileComplete/profileComplete",
@@ -39,7 +58,8 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "default"
 	},
 	"uniIdRouter": {}
 }

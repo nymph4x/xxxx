@@ -22,12 +22,13 @@ exports.main = async (event, context) => {
     });
     return {
       success: true,
-      message: '注册成功'
+      message: '注册成功',
     };
   } catch (error) {
     return {
       success: false,
       message: '注册失败，请重试',
+	  data: null
       error
     };
   }

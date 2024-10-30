@@ -58,9 +58,17 @@ exports.main = async (event, context) => {
         const rankResult = await leaderboardCollection
           .where({ score: db.command.gte(currentUserScore) })
           .count();
+		
+		 // 再次查询 usersCollection 以获取当前用户的昵称和其他信息
+		const userResult = await usersCollection.doc(user_id).get();
+		const user = userResult.data[0];
+				
         currentUser = {
           rank: rankResult.total,
-          score: currentUserScore
+          score: currentUserScore,
+          user_id: user_id,
+          avatarUrl: await fetchAvatarUrl(user_id),
+          nickname: userResult.data[0] ? userResult.data[0].nickname : '我'
         };
       }
     }

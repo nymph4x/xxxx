@@ -1,0 +1,7 @@
+{
+  "name": "getUserTransactions",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

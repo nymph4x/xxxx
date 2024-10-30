@@ -28,16 +28,28 @@ export default {
       uni.navigateTo({ url: '/pages/register/register' });
     },
     async login() {
-      const [err, res] = await uniCloud.callFunction({
-        name: 'userLogin',
-        data: { account: this.form.account, password: this.form.password }
-      });
-      if (res.result.success) {
-        uni.showToast({ title: '登录成功', icon: 'success' });
-        uni.switchTab({ url: '/pages/home/home' });
-      } else {
-        uni.showToast({ title: res.result.message || '登录失败', icon: 'none' });
-      }
+          try {
+            const res = await uniCloud.callFunction({
+              name: 'userLogin',
+              data: { account: this.form.account, password: this.form.password }
+            });
+            
+            if (res.result.success) {
+              // 将 user_id 存储到本地
+              const userId = res.result.data.user_id;
+              uni.setStorageSync('user_id', userId);
+			  console.log("Stored user_id:", uni.getStorageSync('user_id')); // 输出 user_id
+              
+              uni.showToast({ title: '登录成功', icon: 'success' });
+			  uni.navigateTo({ url: '/pages/leaderboard/leaderboard' });//自己测试
+              //uni.switchTab({ url: '/pages/home/home' });
+            } else {
+              uni.showToast({ title: res.result.message || '登录失败', icon: 'none' });
+            }
+          } catch (error) {
+            console.error("Login error:", error);
+            uni.showToast({ title: '登录失败', icon: 'none' });
+          }
     }
   }
 };
