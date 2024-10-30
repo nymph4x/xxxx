@@ -38,5 +38,16 @@
 - **错误提示**：若登录失败，需通过弹窗或文本提醒用户重新输入账号或密码。
 - **账号安全性**：建议采用加密存储密码的方式，提升数据的安全性。
 
+## 特别提醒
+```
+// 将 user_id 存储到本地
+              const userId = res.result.data.user_id;
+              uni.setStorageSync('user_id', userId);
+			  console.log("Stored user_id:", uni.getStorageSync('user_id')); // 输出 user_id
+```
+登录界面获取用户唯一`user_id`，并将其存储到本地，后续如果需要使用可以调用`uni.getStorageSync('user_id')`获取用户id。
+这里这样设计主要是为了通过`user_id`将不同的数据库进行关联，确保绑定用户。
+
+
 ## 小结
 登录页面的主要功能是为已注册用户提供安全的登录入口，并将验证通过的用户导向主页面或福币排行榜。通过调用 `userLogin` 云函数验证信息，页面保障了用户数据的私密性与安全性。
